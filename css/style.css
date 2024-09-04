@@ -1,0 +1,484 @@
+body {
+  font-size: 1.2rem;
+  font-family: "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell;
+  color: #fff;
+  text-shadow: 3px 2px 3px rgb(0, 0, 0);
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+header {
+  width: 1200px;
+  max-width: 80%;
+  margin: auto;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 100;
+  background-color: #000;
+  padding: 0 2rem;
+}
+header img {
+  height: 2em;
+  width: auto;
+  object-fit: cover;
+}
+header nav {
+  display: flex;
+  gap: 2rem;
+  padding: 0 2rem;
+}
+header nav a {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #fff;
+  letter-spacing: 0.1rem;
+  font-size: 1rem;
+}
+
+.slider {
+  width: 100vw;
+  height: 100vh;
+  margin-top: -5rem;
+  overflow: hidden;
+  position: relative;
+}
+.slider .list .item {
+  position: absolute;
+  inset: 0 0 0 0;
+}
+.slider .list .item > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.slider .list .item .caracter {
+  height: 100vh;
+  position: absolute;
+  right: 0%;
+}
+.slider .list .item .caracter img {
+  object-fit: cover;
+  position: relative;
+  height: 95%;
+  margin-right: 0;
+  margin-top: 5%;
+  z-index: 0;
+  animation: showChar 0.5s linear 1 forwards;
+  transform: translateX(100px);
+  filter: blur(50px);
+  opacity: 0;
+}
+
+@keyframes showChar {
+  to {
+    transform: translateX(0);
+    filter: blur(0);
+    opacity: 1;
+  }
+}
+.slider .list .item .detail {
+  position: absolute;
+  font-family: "Cinzel", serif;
+  top: 20%;
+  width: 1200px;
+  max-width: 80%;
+  margin: auto;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.slider .list .item .detail .title {
+  font-size: 1.5rem;
+  font-weight: 900;
+  font-family: "Bangers", system-ui;
+  letter-spacing: 0.5rem;
+  margin-bottom: 0.5rem;
+  color: #fff;
+  text-shadow: 3px 2px 3px rgb(0, 0, 0);
+}
+.slider .list .item .detail .name {
+  text-transform: uppercase;
+  font-size: 3.5rem;
+  font-weight: 900;
+  letter-spacing: 0.1rem;
+  line-height: 3.5rem;
+  color: #fff;
+  text-shadow: 3px 2px 3px rgb(0, 0, 0);
+}
+.slider .list .item .detail figure {
+  display: flex;
+  font-size: 1.1rem;
+}
+
+.slider .list .item .detail .desc {
+  margin-top: 1rem;
+  font-weight: 100;
+  font-size: 1rem;
+  max-width: 40rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box; /* Membuat elemen seperti flexbox untuk teks multiline */
+  -webkit-line-clamp: 5; /* Menentukan jumlah baris teks yang ditampilkan */
+  -webkit-box-orient: vertical;
+  font-family: "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell;
+}
+.slider .list .item .detail .more {
+  display: inline-block;
+  margin-top: 1rem;
+  background-color: #000;
+  color: #fff;
+  padding: 0.6rem 0.8rem;
+  font-size: 1rem;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  transition: all 300ms ease;
+}
+.slider .list .item .detail .more:hover {
+  background-color: #fff;
+  color: #000;
+  text-shadow: none;
+}
+
+.thumbnail {
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  width: max-content;
+  z-index: 99;
+  display: flex;
+  gap: 20px;
+}
+.thumbnail .item {
+  width: 150px;
+  height: 220px;
+  flex-shrink: 0;
+  position: relative;
+}
+.thumbnail .item .caracter img {
+  height: 80%;
+  position: absolute;
+  right: 0%;
+  animation: showChar 1s linear 1 forwards;
+  transform: translateX(50px);
+  filter: blur(50px);
+  opacity: 0;
+}
+
+@keyframes showChar {
+  to {
+    transform: translateX(0);
+    filter: blur(0);
+    opacity: 1;
+  }
+}
+
+.thumbnail .item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0.5rem;
+}
+.thumbnail .item .detail {
+  position: absolute;
+  bottom: 15px;
+  left: 10px;
+  right: 10px;
+  color: #fff;
+  text-shadow: 3px 2px 3px rgb(0, 0, 0);
+}
+.thumbnail .item .detail .name {
+  font-weight: 700;
+  color: #fff;
+  text-align: left;
+  margin-bottom: 5px;
+}
+.thumbnail .item .detail blockquote {
+  font-size: 0.7rem;
+  font-weight: 100;
+  text-align: left;
+}
+
+.arrows {
+  position: absolute;
+  padding: 0 2rem;
+  width: 100vw;
+  height: 2rem;
+  z-index: 10000;
+  top: 87%;
+  max-width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: 0.8rem;
+}
+
+.arrows button {
+  padding: 4px 12px;
+  border-radius: 4px;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  z-index: 100;
+  background-color: #000;
+  transition: all 300ms ease;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.arrows button:hover {
+  color: #000;
+  background-color: #fff;
+}
+
+/* Starting Animation */
+.slider .list .item:nth-child(1) {
+  z-index: 1;
+}
+
+.slider .list .item:nth-child(1) .title,
+.slider .list .item:nth-child(1) .name,
+.slider .list .item:nth-child(1) figure,
+.slider .list .item:nth-child(1) .desc,
+.slider .list .item:nth-child(1) .more {
+  transform: translateY(50px);
+  filter: blur(50px);
+  opacity: 0;
+  animation: showDetail 1s linear 1 forwards;
+}
+
+@keyframes showDetail {
+  to {
+    transform: translateY(0);
+    filter: blur(0);
+    opacity: 1;
+  }
+}
+
+.slider .list .item:nth-child(1) .title {
+  animation-delay: 1s;
+}
+.slider .list .item:nth-child(1) .name {
+  animation-delay: 1.2s;
+}
+.slider .list .item:nth-child(1) figure {
+  animation-delay: 1.4s;
+}
+.slider .list .item:nth-child(1) .desc {
+  animation-delay: 1.6s;
+}
+.slider .list .item:nth-child(1) .more {
+  animation-delay: 1.8s;
+}
+
+/* action Next */
+.slider.next .list .item:nth-child(1) img {
+  width: 150px;
+  height: 220px;
+  position: absolute;
+  left: 50%;
+  bottom: 50px;
+  animation: growImage 0.5s linear 1 forwards;
+}
+
+@keyframes growImage {
+  to {
+    width: 100%;
+    height: 100%;
+    left: 0;
+    bottom: 0;
+  }
+}
+
+.slider.next .thumbnail .item:nth-last-child(1) {
+  width: 0;
+  overflow: hidden;
+  opacity: 0;
+  animation: showThumbnail 0.5s linear 1 forwards;
+}
+
+@keyframes showThumbnail {
+  to {
+    width: 150px;
+    opacity: 1;
+  }
+}
+.slider.next .thumbnail {
+  transform: translateX(150px);
+  animation: transformThumbnail 0.5s linear 1 forwards;
+}
+@keyframes transformThumbnail {
+  to {
+    transform: translateX(0);
+  }
+}
+
+/* action Preview */
+.slider.prev .list .item:nth-child(2) {
+  z-index: 2;
+}
+.slider.prev .list .item:nth-child(2) img {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  animation: shrinkImage 0.5s linear 1 forwards;
+}
+
+@keyframes shrinkImage {
+  to {
+    width: 150px;
+    height: 220px;
+    border-radius: 15px;
+    left: 50%;
+    bottom: 50px;
+  }
+}
+
+.slider.prev .thumbnail .item:nth-child(1) {
+  width: 0;
+  overflow: hidden;
+  opacity: 0;
+  animation: showThumbnail 0.5s linear 1 forwards;
+}
+
+.slider.prev .list .item:nth-child(2) .title,
+.slider.prev .list .item:nth-child(2) .name,
+.slider.prev .list .item:nth-child(2) figure,
+.slider.prev .list .item:nth-child(2) .desc,
+.slider.prev .list .item:nth-child(2) .more {
+  animation: hideDetail 1s linear 1 forwards;
+}
+
+@keyframes hideDetail {
+  to {
+    transform: translateY(-150px);
+    filter: blur(20px);
+    opacity: 0;
+  }
+}
+
+.slider.next .arrows button,
+.slider.prev .arrows button {
+  pointer-events: none;
+}
+
+.loading-bar {
+  width: 0%;
+  height: 5px;
+  background-color: #1284ee;
+  position: absolute;
+  z-index: 100;
+  top: 0;
+  left: 0;
+}
+
+.slider.next .loading-bar,
+.slider.prev .loading-bar {
+  width: 100%;
+  animation: loadingTime 2s linear forwards;
+}
+@keyframes loadingTime {
+  to {
+    width: 0%;
+  }
+}
+.play-game {
+  width: 100vw;
+  height: 30vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2.5rem;
+  flex-direction: column;
+  padding: 0 2rem;
+}
+.play-game h5 {
+  color: #000;
+  font-size: 1.5rem;
+  text-shadow: none;
+  margin-bottom: -1rem;
+}
+.play-game img {
+  width: auto;
+  height: 2.5rem;
+  margin: 0 0.1rem 0.5rem;
+}
+
+.about {
+  position: relative;
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+}
+.about img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.about .container {
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  flex-direction: row;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+.about .container .desc {
+  padding: 5rem;
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  text-align: start;
+  flex-direction: column;
+  width: 80%;
+  text-align: start;
+  z-index: 100;
+}
+.about .container .desc h2 {
+  font-family: "Bangers", system-ui;
+  letter-spacing: 0.5rem;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+.about .container .desc p {
+  font-size: 1.3rem;
+  font-family: "Cinzel", serif;
+}
+.about .container img {
+  width: 100%;
+  height: auto;
+  margin-right: -30rem;
+  object-fit: cover;
+}
+
+/* Mobile Breakpoint */
+@media screen and (max-width: 768px) {
+  header {
+    display: none;
+  }
+  .slider .list .item .detail .name {
+    font-size: 2.8rem;
+    line-height: 2.8rem;
+  }
+  .slider .list .item .detail figure {
+    font-size: 0.9rem;
+  }
+  .slider .list .item .detail .desc {
+    font-size: 0.7rem;
+  }
+  .slider .list .item .detail .more {
+    font-size: 0.9rem;
+  }
+  .about .container {
+    flex-direction: column;
+    padding: 1rem;
+  }
+  .about .container .desc {
+    width: 100%;
+    padding: 0;
+    margin: 1rem 0;
+  }
+  .about .container img {
+    margin-right: 0;
+  }
+}
